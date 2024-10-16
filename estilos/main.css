@@ -1,65 +1,1008 @@
 html {
-    font-size: 16px;
-
+    font-size: 16px; /* Define el tamaño base de la fuente en 16px para toda la página */
 }
-/*voy a usar mediasquery para hacer adaptable la letra a un dispostivo diferente*/
+
+/* Media query para ajustar el tamaño de la fuente en pantallas de menos de 400px de ancho */
 @media screen and (max-width:400px) {
-    html{
-        font-size: 3px;
-
+    html {
+        font-size: 3px; /* Reduce significativamente el tamaño de la fuente en pantallas pequeñas */
     }
 }
-html, body{
-    height: 100%;
 
+html, body {
+    height: 100%; /* Hace que el html y el body ocupen el 100% del alto de la pantalla */
 }
 
-body{
-    background: #050503 ;
-    font-family: "Open-Sans", sans-serif;
-    font-size: 1.7rem;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.882;
-    color: white;
-    margin: 0;
-    padding: 12px;
-
+body {
+    background: #050503; /* Color de fondo oscuro */
+    font-family: "Open-Sans", sans-serif; /* Define la fuente principal como "Open Sans" */
+    font-size: 1.7rem; /* Tamaño de la fuente relativo a la configuración base */
+    font-style: normal; /* Define que no haya cursiva */
+    font-weight: normal; /* Define el peso normal para el texto */
+    line-height: 1.882; /* Ajusta el espacio entre líneas */
+    color: white; /* Color del texto blanco */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 12px; /* Añade un padding de 12px alrededor del contenido del body */
 }
 
-/*estilos a los links*/
-
-a{
-    color: red;
-    transition: all 0.3s ease-in-out;
+/* Estilos para los enlaces */
+a {
+    color: rgb(255, 0, 200); /* El color del enlace será rosa */
+    transition: all 0.3s ease-in-out; /* Aplica una transición suave en 0.3 segundos cuando cambien los estilos */
 }
 
-a:hover,
-a:focus,
-a:active{
-    color: #000000;
+/* Estilos cuando el enlace está activo, enfocado o al hacer hover */
+a:hover, a:focus, a:active {
+    color: #000000; /* Cambia el color del enlace a negro */
 }
 
-a:hover,
-a:active´{
-    outline: 0;
+a:hover, a:active {
+    outline: 0; /* Elimina el borde del enlace cuando está activo o en hover */
 }
 
-/*tipografia*/
-h1,h2,h3,h4,h5,h6, .h1,.h2,.h3,.h4,.h5 {
-    font-family: "Frank Ruh1 libre",serif;
-    font-weight: 500;
-    font-style: normal;
-    color: blue;
-}
-h1, .h1 , h2, .h2 , h3 , .h3 , h4 , .h4{
-    margin-top: 6rem;
-    margin-bottom: 16rem;
+/* Tipografía para títulos */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5 {
+    font-family: "Frank Ruh1 libre", serif; /* Define la fuente para los títulos como "Frank Ruh1 Libre" */
+    font-weight: 500; /* Define un peso medio de la fuente */
+    font-style: normal; /* Define que no haya cursiva */
+    color: blue; /* Cambia el color de los títulos a azul */
 }
 
+/* Margen superior e inferior para los títulos de nivel 1 a 4 */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+    margin-top: 6rem; /* Añade un margen superior de 6 rem */
+    margin-bottom: 16rem; /* Añade un margen inferior de 16 rem */
+}
+
+/* Media query para reducir el margen inferior de los títulos en pantallas pequeñas (menos de 600px) */
 @media screen and (max-width: 600px) {
-    h1, .h1 , h2, .h2 , h3 , .h3 , h4 , .h4{
-        margin-top: 6rem;
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+        margin-top: 6rem; /* Mantiene el margen superior en 6rem en pantallas pequeñas */
     }
-    
+}
+
+/* Estilo para los títulos de nivel 5 y 6 */
+h5, .h5, h6, .h6 {
+    margin-top: 4.8rem; /* Añade un margen superior de 4.8rem */
+    margin-bottom: 1.2rem; /* Añade un margen inferior de 1.2rem */
+}
+
+/* Estilo del header (encabezado) */
+.s-header {
+    position: absolute; /* Posiciona el header de forma absoluta */
+    top: 2rem; /* Lo coloca a 2rem desde la parte superior */
+    left: 0; /* Alinea el header a la izquierda */
+    width: 100%; /* Hace que el header ocupe el 100% del ancho */
+    border: 1px solid white; /* Añade un borde blanco */
+    height: 78px; /* Define una altura fija de 78px */
+    text-align: center; /* Centra el contenido del header */
+}
+
+/* Estilo cuando el header está fijo en la parte superior (sticky) */
+.s-header.sticky {
+    background: #050505; /* Cambia el color de fondo cuando el header está fijo */
+    position: fixed; /* Hace que el header se mantenga fijo en la parte superior */
+    top: 0; /* Lo coloca en la parte superior de la ventana */
+    left: 0; /* Lo alinea a la izquierda */
+}
+
+/* Estilo del logo del header */
+.header-logo {
+    display: inline-block; /* Muestra el logo en línea */
+    margin: 6px 0 0 0; /* Añade un margen superior de 6px */
+    position: absolute; /* Posiciona el logo de forma absoluta */
+    top: 50%; /* Lo coloca a la mitad vertical del header */
+    left: 40px; /* Lo coloca a 40px desde la izquierda */
+}
+
+/* Estilo del enlace que contiene el logo */
+.header-logo a {
+    display: block; /* Muestra el enlace como bloque */
+    margin: 0; /* Elimina márgenes internos */
+    padding: 0; /* Elimina el padding */
+    outline: 0; /* Elimina el borde cuando está activo o enfocado */
+    border: none; /* Sin borde */
+    transition: all .3s; /* Transición suave de 0.3 segundos en cualquier cambio */
+}
+
+/* Tamaño de la imagen del logo */
+.header-logo img {
+    width: 132px; /* Ancho de la imagen del logo */
+    height: 36px; /* Altura de la imagen del logo */
+    margin: 0; /* Elimina los márgenes */
+}
+
+/* Envoltura para la navegación del header */
+.header-nav-wrap {
+    display: inline-block; /* Muestra la navegación en línea */
+}
+
+/* Estilos para la lista de navegación en el header */
+.header-nav-wrap ul {
+    display: inline-block; /* Muestra los elementos de la lista en línea */
+    list-style: none; /* Elimina los puntos de la lista */
+    margin-left: 0; /* Elimina el margen izquierdo */
+    margin-top: 0; /* Elimina el margen superior */
+}
+
+/* Estilos para los elementos de la lista en la navegación */
+.header-nav-wrap li {
+    display: inline-block; /* Muestra los elementos de la lista en línea */
+    padding-left: 0; /* Elimina el padding izquierdo */
+}
+
+/* Estilos para los enlaces en la navegación */
+.header-nav-wrap li a {
+    display: block; /* Muestra el enlace como bloque */
+    line-height: calc(78px -(18px*2)); /* Define la altura de línea del enlace */
+}
+
+/* Estilos principales para la navegación */
+.header-main-nav {
+    font-family: "Roboto", sans-serif; /* Usa la fuente "Roboto" para la navegación */
+    font-size: 13px; /* Tamaño de fuente pequeño */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 0.3rem; /* Espaciado entre letras */
+    color: rgba(255, 255, 255, 0.5); /* Color blanco semitransparente */
+    margin: 0 0 0 4px; /* Márgenes alrededor de la navegación */
+    z-index: 2; /* Coloca la navegación encima de otros elementos */
+    position: static; /* Posicionamiento estándar */
+}
+
+/* Ajuste del margen en la navegación */
+.header-main-nav {
+    margin: 0 2rem; /* Añade un margen de 2rem a los lados */
+}
+
+/* Estilos para los enlaces dentro de la navegación */
+.header-main-nav a {
+    color: rgba(255, 255, 255, 0.5); /* Color blanco semitransparente */
+    position: relative; /* Posicionamiento relativo para los enlaces */
+}
+
+/* Estilos para los enlaces cuando están en hover, enfocados o activos */
+.header-main-nav a:hover,
+.header-main-nav a:focus,
+.header-main-nav a:active {
+    color: #ffff; /* Cambia el color del enlace a blanco sólido */
+}
+
+/* Estilo para el enlace activo (current) */
+.header-main-nav .current a {
+    color: #ffff; /* Color blanco sólido para el enlace activo */
+}
+
+/* Estilos para los iconos de redes sociales en el header */
+.header-social {
+    font-size: 2rem; /* Tamaño de la fuente grande para los iconos sociales */
+    margin: 0; /* Elimina márgenes */
+    position: absolute; /* Posiciona de forma absoluta */
+    top: 0; /* Coloca los iconos en la parte superior */
+    right: 40px; /* Los alinea a la derecha, con un margen de 40px */
+}
+
+/* Estilos para los elementos de la lista de redes sociales */
+.header-social li {
+    margin: 1rem; /* Añade un margen de 1rem alrededor de cada icono */
+}
+
+/* El último elemento de la lista de redes sociales no tiene margen derecho */
+.header-social li:last-child {
+    margin-right: 0;
+}
+
+/* Estilos para los enlaces de redes sociales */
+.header-social li a {
+    color: rgba(255, 255, 255, 0.5); /* Color blanco semitransparente para los iconos
+
+/*----------------------------------------------------------------------------------------
+* # menu trigger
+*-----------------------------------------------------------------------------------------*/
+/* Estilos para el botón que muestra el menú en dispositivos móviles */
+.header-menu-toggle {
+    display: none; /* Inicialmente el botón no se muestra */
+    height: 42px; /* Altura del botón */
+    width: 42px; /* Ancho del botón */
+    line-height: 42px; /* Altura de línea para centrar el texto verticalmente */
+    font-family: "Lora", serif; /* Fuente del texto dentro del botón */
+    font-size: 1.4rem; /* Tamaño de la fuente */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: .2rem; /* Añade espaciado entre letras */
+    color: rgba(255, 255, 255, 0.5); /* Color del texto en blanco semitransparente */
+    transition: all .3s; /* Transición suave de 0.3 segundos en cambios de estilo */
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    right: 32px; /* Lo alinea a la derecha con un margen de 32px */
+    top: 18px; /* Lo coloca 18px desde la parte superior */
+}
+
+/* Estilos al hacer hover o cuando el botón tiene el foco */
+.header-menu-toggle:hover, .header-menu-toggle:focus {
+    color: #ffffff; /* Cambia el color del texto a blanco cuando se hace hover o tiene el foco */
+}
+
+/* Estilos para el span dentro del botón (línea que representa el ícono del menú) */
+.header-menu-toggle span {
+    display: block; /* Muestra el span como un bloque */
+    width: 24px; /* Ancho de la línea */
+    height: 2px; /* Grosor de la línea */
+    margin-top: -1px; /* Ajuste del margen superior */
+    background-color: #ffffff; /* Color de fondo blanco para la línea */
+    transition: all .5s; /* Transición suave de 0.5 segundos en cambios de estilo */
+    font: 0/0 a; /* Resetea el tamaño de la fuente */
+    text-shadow: none; /* Elimina cualquier sombra de texto */
+    color: transparent; /* Hace que el texto sea invisible */
+    position: absolute; /* Posiciona de forma absoluta el span */
+    top: 50%; /* Coloca el span en el 50% de la altura del contenedor */
+    left: 9px; /* Lo alinea a la izquierda con un margen de 9px */
+    right: auto; /* Elimina cualquier ajuste a la derecha */
+    bottom: auto; /* Elimina cualquier ajuste en la parte inferior */
+}
+
+/* Estilos para los pseudo-elementos antes y después de la línea del ícono (crean las otras dos líneas) */
+.header-menu-toggle span::before, .header-menu-toggle span::after {
+    content: ''; /* Crea contenido vacío para las líneas adicionales */
+    width: 100%; /* Ocupa el mismo ancho que el span */
+    height: 100%; /* Ocupa el mismo grosor que el span */
+    background-color: inherit; /* Hereda el color de fondo del span */
+    position: absolute; /* Posiciona de forma absoluta estos elementos */
+    left: 0; /* Los alinea a la izquierda */
+    transition: all .5s; /* Transición suave de 0.5 segundos */
+}
+
+/* La primera línea (antes) se coloca 9px por encima del span */
+.header-menu-toggle span::before {
+    top: -9px;
+}
+
+/* La tercera línea (después) se coloca 9px por debajo del span */
+.header-menu-toggle span::after {
+    bottom: -9px;
+}
+
+/* Cuando el botón ha sido clicado (se activa el menú), se aplican los siguientes estilos */
+.header-menu-toggle.is-clicked span {
+    background-color: rgba(255, 255, 255, 0); /* Hace invisible la línea central */
+    transition: all .1s; /* Aplica una transición más rápida de 0.1 segundos */
+}
+
+/* Las líneas superior e inferior se vuelven blancas */
+.header-menu-toggle.is-clicked span::before, .header-menu-toggle.is-clicked span::after {
+    background-color: white;
+}
+
+/* La línea superior rota 135 grados para formar una cruz */
+.header-menu-toggle.is-clicked span::before {
+    top: 0; /* Coloca la línea superior en el mismo nivel que el span central */
+    -webkit-transform: rotate(135deg); /* Rotación para navegadores webkit */
+    transform: rotate(135deg); /* Rotación de 135 grados para otros navegadores */
+}
+
+/* La línea inferior rota 225 grados para completar la cruz */
+.header-menu-toggle.is-clicked span::after {
+    bottom: 0; /* Coloca la línea inferior en el mismo nivel que el span central */
+    -webkit-transform: rotate(225deg); /* Rotación para navegadores webkit */
+    transform: rotate(225deg); /* Rotación de 225 grados para otros navegadores */
+}
+
+}
+
+/*-----------------------------------------------------------------
+* responsive
+* header
+--------------------------------------------------------------------*/
+/* Media query para pantallas con un ancho máximo de 1200px */
+@media screen and (max-width:1200px) {
+    .header-main-nav {
+        font-size: 12px; /* Disminuye el tamaño de la fuente del menú de navegación */
+    }
+
+    .header-main-nav li {
+        margin: 0 1.4rem; /* Ajusta el margen entre los elementos del menú */
+    }
+}
+
+/* Media query para pantallas con un ancho máximo de 1000px */
+@media screen and (max-width:1000px) {
+    .s-header {
+        text-align: right; /* Alinea el contenido del encabezado a la derecha */
+    }
+
+    .header-nav-wrap {
+        margin-right: 36px; /* Agrega un margen derecho al contenedor de navegación */
+    }
+
+    .header-nav-wrap .header-social {
+        display: none; /* Oculta los íconos de redes sociales en pantallas más pequeñas */
+    }
+}
+
+/* Media query para pantallas con un ancho máximo de 800px */
+@media screen and (max-width:800px) {
+    .s-header {
+        background-color: #050505; /* Cambia el color de fondo del encabezado */
+        position: fixed; /* Fija el encabezado en la parte superior */
+        top: 0; /* Lo coloca en la parte superior de la página */
+    }
+
+    .header-logo img {
+        width: 128px; /* Ajusta el ancho del logo */
+        height: 30px; /* Ajusta la altura del logo */
+    }
+
+    .header-nav-wrap {
+        display: none; /* Oculta inicialmente la barra de navegación */
+        text-align: left; /* Alinea el texto de navegación a la izquierda */
+        height: auto; /* Ajusta automáticamente la altura */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        background-color: #050505; /* Color de fondo de la barra de navegación */
+        padding: 120px 44px 64px; /* Añade relleno alrededor del contenido */
+    }
+
+    .header-nav-wrap .header-main-nav {
+        display: block; /* Muestra el menú de navegación verticalmente */
+        padding-left: 0; /* Elimina el relleno izquierdo */
+        height: auto; /* Ajusta automáticamente la altura */
+        margin: 0 0 4rem 0; /* Añade un margen inferior al menú */
+        border-top: 1px solid rgba(255, 255, 255, 0.05); /* Añade una línea superior tenue */
+    }
+
+    .header-nav-wrap .header-main-nav li {
+        display: block; /* Cada elemento de la lista ocupa una línea completa */
+        margin: 0; /* Elimina el margen */
+        padding: 0; /* Elimina el relleno */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Añade una línea inferior tenue entre los elementos */
+    }
+
+    .header-nav-wrap .header-main-nav li a {
+        padding: 18px 0; /* Añade relleno vertical a los enlaces */
+        line-height: 20px; /* Ajusta la altura de línea de los enlaces */
+    }
+
+    .header-nav-wrap .header-social {
+        display: block; /* Muestra los íconos de redes sociales en esta vista */
+        position: static; /* Posicionamiento estático (fluye con el contenido) */
+    }
+
+    .header-nav-wrap .header-social li {
+        font-size: 1.8rem; /* Ajusta el tamaño de la fuente de los íconos sociales */
+        margin-right: 1.6rem; /* Añade margen derecho a cada ícono */
+    }
+
+    .header-nav-wrap .header-social li a {
+        line-height: 36px; /* Ajusta la altura de línea para los enlaces sociales */
+    }
+
+    .header-menu-toggle {
+        display: block; /* Muestra el botón de menú "toggle" para dispositivos móviles */
+    }
+}
+
+/* Media query para pantallas con un ancho máximo de 600px */
+@media screen and (max-width:600px) {
+    .header-logo {
+        left: 35px; /* Ajusta la posición del logo más hacia la izquierda */
+    }
+}
+
+/* --------------------------------------------------------------------------------------------
+ * Media query para pantallas grandes (con un ancho mínimo de 801px)
+ * Hace que el menú sea visible en pantallas anchas
+ --------------------------------------------------------------------------------------------- */
+@media only screen and (min-width:801px) {
+    .header-nav-wrap {
+        display: block !important; /* Asegura que la barra de navegación se muestre en pantallas grandes */
+    }
+}
+
+/*--------------------------------------------------------------------------------------------
+  * hacer que el menu sea visible en una pantalla larga
+  ---------------------------------------------------------------------------------------------*/
+@media only screen and (min-width:801px) {
+    .header-nav-wrap {
+        display: block !important;
+    }
+}
+
+/* ===================================================================
+ * # intro 
+ *
+ * ------------------------------------------------------------------- */
+/* Estilos principales para la sección de introducción (intro) */
+.s-intro {
+    width: 100%; /* Ocupa el ancho completo */
+    height: 100vh; /* Altura igual al 100% de la altura de la ventana */
+    min-height: 792px; /* Altura mínima de la sección */
+    background-color: #050505; /* Color de fondo oscuro */
+}
+
+.intro-content {
+    height: 100%; /* Ocupa el 100% de la altura disponible */
+    max-width: 1140px; /* Máximo ancho de la sección de contenido */
+    padding-top: 20vh; /* Añade espacio superior */
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; /* Centra el contenido verticalmente */
+    position: relative; /* Posicionamiento relativo para elementos hijos */
+}
+
+.intro-pic {
+    background-color: #02182c; /* Color de fondo de la imagen de intro */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: top center; /* Posiciona la imagen en la parte superior centrada */
+    background-image: url(../img/hero-pic.jpg); /* Imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+    position: absolute; /* Posiciona la imagen de manera absoluta dentro de su contenedor */
+    top: 20%; /* Posiciona la imagen a un 20% desde la parte superior */
+    right: 0;
+    bottom: 0;
+    left: 50%; /* La imagen cubre la mitad derecha de la pantalla */
+}
+
+.intro-pic::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Cubre toda la imagen con una capa */
+    background-color: #000000; /* Capa de superposición oscura */
+    opacity: .2; /* Transparencia de la capa */
+}
+
+.intro-grid {
+    background-image: url(../img/pattern-dot-grid.svg); /* Imagen de fondo de puntos */
+    background-size: 24px 24px; /* Tamaño del patrón */
+    opacity: .15; /* Transparencia del patrón */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 30%; /* Posición desde la parte superior */
+    right: 0;
+    bottom: 0;
+    left: 30%; /* Cubre la sección izquierda de la pantalla */
+}
+
+.intro-text {
+    -webkit-transform: translate3d(0, -3.6rem, 0);
+    transform: translate3d(0, -3.6rem, 0); /* Traslada el texto hacia arriba */
+    position: static; /* Posicionamiento estándar */
+    z-index: 1; /* Se asegura de que esté por encima de otros elementos */
+}
+
+.intro-text h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: 2.4rem; /* Tamaño de fuente del subtítulo */
+    font-weight: 500;
+    line-height: 1.333;
+    color: #cf1767; /* Color rosado del subtítulo */
+    margin-top: 0; /* Sin margen superior */
+}
+
+.intro-text h1 {
+    font-size: 7.8rem; /* Tamaño de fuente del título principal */
+    font-weight: 500;
+    line-height: 1.179;
+    color: #ffffff; /* Color blanco del título */
+    margin-top: 0; /* Sin margen superior */
+}
+
+.intro-scroll {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 2;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: .3rem; /* Espaciado entre letras */
+    position: absolute; /* Posiciona el texto de desplazamiento */
+    bottom: 8rem; /* Desde la parte inferior */
+    left: 24px; /* Desde la izquierda */
+    z-index: 1; /* Se asegura de que esté por encima de otros elementos */
+}
+
+.intro-scroll a {
+    display: inline-block; /* Hace que el enlace sea un bloque en línea */
+    color: rgba(255, 255, 255, 0.3); /* Color blanco con opacidad */
+    position: relative; /* Posicionamiento relativo */
+    padding-right: 8.8rem; /* Relleno derecho */
+}
+
+.intro-scroll a::after {
+    content: ""; /* Añade una línea decorativa */
+    position: absolute;
+    top: 50%; /* Alinea verticalmente al 50% */
+    right: 0;
+    height: 1px; /* Altura de la línea */
+    width: 72px; /* Ancho de la línea */
+    background-color: #cf1767; /* Color de la línea */
+}
+
+/* ------------------------------------------------------------------- 
+ * Estilos responsivos para la sección de intro
+ * ------------------------------------------------------------------- */
+
+/* Ajustes para pantallas con un ancho máximo de 1400px */
+@media screen and (max-width:1400px) {
+    .intro-text h3 {
+        font-size: 2.2rem; /* Ajusta el tamaño del subtítulo */
+    }
+
+    .intro-text h1 {
+        font-size: 7.2rem; /* Ajusta el tamaño del título */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 1200px */
+@media screen and (max-width:1200px) {
+    .intro-content {
+        max-width: 1000px; /* Reduce el ancho máximo del contenido */
+    }
+
+    .intro-text h3 {
+        font-size: 2rem; /* Reduce el tamaño del subtítulo */
+    }
+
+    .intro-text h1 {
+        font-size: 7rem; /* Reduce el tamaño del título */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 1024px */
+@media screen and (max-width:1024px) {
+    .s-intro {
+        max-height: 800px; /* Limita la altura máxima de la sección */
+    }
+
+    .intro-text h1 {
+        font-size: 6.2rem; /* Reduce el tamaño del título */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 900px */
+@media screen and (max-width:900px) {
+    .intro-text h1 {
+        font-size: 6rem; /* Reduce el tamaño del título */
+    }
+
+    .intro-text br {
+        display: none; /* Oculta los saltos de línea en dispositivos más pequeños */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 800px */
+@media screen and (max-width:800px) {
+    .intro-content {
+        width: 88%; /* Reduce el ancho del contenido */
+        padding-top: 8rem; /* Reduce el espacio superior */
+    }
+
+    .intro-pic {
+        top: 12%; /* Ajusta la posición de la imagen */
+        left: 40%; /* Ajusta el margen izquierdo de la imagen */
+    }
+
+    .intro-pic::before {
+        opacity: .4; /* Aumenta la opacidad de la capa sobre la imagen */
+    }
+
+    .intro-grid {
+        top: 20%; /* Ajusta la posición de la cuadrícula */
+        opacity: .1; /* Reduce la opacidad de la cuadrícula */
+    }
+
+    .intro-text h3 {
+        font-size: 1.8rem; /* Reduce el tamaño del subtítulo */
+    }
+
+    .intro-text h1 {
+        font-size: 5.6rem; /* Reduce el tamaño del título */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 700px */
+@media screen and (max-width:700px) {
+    .intro-text h1 {
+        font-size: 5rem; /* Reduce el tamaño del título */
+    }
+
+    .intro-pic {
+        left: 30%; /* Ajusta el margen izquierdo de la imagen */
+    }
+
+    .intro-grid {
+        left: 15%; /* Ajusta el margen izquierdo de la cuadrícula */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 600px */
+@media screen and (max-width:600px) {
+    .s-intro {
+        max-height: none; /* Elimina el límite de altura */
+    }
+
+    .intro-content {
+        width: auto; /* Ajusta el ancho del contenido automáticamente */
+    }
+
+    .intro-pic {
+        left: 20%; /* Ajusta el margen izquierdo de la imagen */
+    }
+
+    .intro-grid {
+        left: 10%; /* Ajusta el margen izquierdo de la cuadrícula */
+    }
+
+    .intro-text {
+        -webkit-transform: translate3d(0, -4.8rem, 0);
+        transform: translate3d(0, -4.8rem, 0); /* Ajusta la posición vertical del texto */
+    }
+
+    .intro-text h1 {
+        font-size: 4.8rem; /* Reduce el tamaño del título */
+    }
+
+    .intro-scroll {
+        font-size: 1.1rem; /* Reduce el tamaño de la fuente del scroll */
+        left: 30px; /* Ajusta el margen izquierdo del scroll */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 400px */
+@media screen and (max-width:400px) {
+    .s-intro {
+        min-height: 656px; /* Establece una altura mínima para pantallas muy pequeñas */
+    }
+
+    .intro-text h1 {
+        font-size: 4.5rem; /* Reduce el tamaño del título */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 350px */
+@media screen and (max-width:350px) {
+    .intro-text h1 {
+        font-size: 4.2rem; /* Reduce el tamaño del título */
+    }
+}
+
+
+/* ===================================================================
+ * # about
+ *
+ * ------------------------------------------------------------------- */
+/* ------------------------------------------------------------------- 
+   * Sección principal de "about" (sobre mí)
+   * ------------------------------------------------------------------- */
+   .s-about {
+    padding-top: 19.2rem; /* Espacio superior */
+    padding-bottom: 16.8rem; /* Espacio inferior */
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+.s-about .row {
+    max-width: 1140px; /* Ancho máximo de la fila */
+}
+
+.s-about>[class*="about-"] {
+    margin-bottom: 15.2rem; /* Espacio inferior entre los bloques de la sección "about" */
+}
+
+.s-about>[class*="about-"]:last-child {
+    margin-bottom: 0; /* Elimina el margen inferior del último bloque */
+}
+
+/* Estilos para el texto de la sección "sobre mí" */
+.about-me__text {
+    -webkit-columns: 2 360px;
+    -moz-columns: 2 360px;
+    columns: 2 360px; /* Divide el texto en 2 columnas con un ancho de 360px */
+    column-gap: 64px; /* Espacio entre columnas */
+}
+
+/* Botones de acción en la sección "sobre mí" */
+.about-me__buttons {
+    margin-top: 4.8rem; /* Espacio superior antes de los botones */
+}
+
+.about-me__buttons .column:first-child {
+    padding-right: 32px; /* Espacio a la derecha del primer botón */
+}
+
+.about-me__buttons .column:last-child {
+    padding-left: 32px; /* Espacio a la izquierda del último botón */
+}
+
+/* ------------------------------------------------------------------- 
+   * ## Línea de tiempo (timeline) 
+   * ------------------------------------------------------------------- */
+.about-experience__timeline {
+    margin-top: 1.6rem; /* Espacio superior para la línea de tiempo */
+}
+
+.about-experience__timeline .column:first-child {
+    padding-right: 40px; /* Espacio a la derecha de la primera columna */
+}
+
+.about-experience__timeline .column:last-child {
+    padding-left: 40px; /* Espacio a la izquierda de la última columna */
+}
+
+.timeline {
+    padding-top: 4.8rem; /* Espacio superior en la línea de tiempo */
+    position: relative; /* Posicionamiento relativo para elementos hijos */
+}
+
+.timeline::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.12); /* Línea vertical con baja opacidad */
+    position: absolute;
+    left: 0; /* Alineado a la izquierda */
+    top: 0;
+}
+
+.timeline::after {
+    content: "";
+    display: block;
+    width: 5.6rem;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.12); /* Línea horizontal con baja opacidad */
+    position: absolute;
+    left: 1px;
+    top: 0;
+}
+
+/* Iconos en la línea de tiempo */
+.timeline__icon-wrap {
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%; /* Iconos circulares */
+    border: 1px solid rgba(0, 0, 0, 0.25); /* Borde de los iconos */
+    position: absolute;
+    top: -2.2rem; /* Posicionamiento superior de los iconos */
+    left: 5.6rem; /* Alineado a la izquierda */
+}
+
+.timeline__icon {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center center; /* Centra la imagen del icono */
+    background-size: contain; /* Asegura que la imagen se ajuste al contenedor */
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0); /* Centra el icono dentro de su contenedor */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+/* Diferentes iconos para tipos de experiencia */
+.timeline__icon--work {
+    background-image: url(../img/icons/icon-briefcase.svg); /* Icono de trabajo */
+}
+
+.timeline__icon--education {
+    background-image: url(../img/icons/icon-education.svg); /* Icono de educación */
+}
+
+.timeline__block {
+    position: relative;
+    padding-left: 5.6rem; /* Espacio a la izquierda del contenido de cada bloque */
+    padding-bottom: .8rem; /* Espacio inferior de cada bloque */
+    margin-top: 2.8rem; /* Margen superior para separar los bloques */
+    min-height: 35.6rem; /* Altura mínima de cada bloque */
+}
+
+.timeline .timeline__block:last-child {
+    padding-bottom: 0; /* Elimina el margen inferior del último bloque */
+}
+
+.timeline__bullet {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 4.8rem;
+    background-color: #000000; /* Color de la "bala" que conecta los bloques */
+    position: absolute;
+    left: -1px;
+    top: 8px;
+}
+
+/* Encabezado de cada bloque en la línea de tiempo */
+.timeline__header {
+    margin-bottom: 3.2rem; /* Espacio inferior después del encabezado */
+}
+
+.timeline__header .timeline__timeframe,
+.timeline__header h5 {
+    font-family: "Roboto", sans-serif;
+}
+
+.timeline__header .timeline__timeframe {
+    font-size: 1.4rem; /* Tamaño de fuente para el periodo de tiempo */
+    font-weight: 400;
+    line-height: 1.714;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: .3rem; /* Espaciado entre letras */
+    margin-bottom: .8rem; /* Espacio inferior del periodo de tiempo */
+    color: #000000; /* Color negro del texto */
+}
+
+.timeline__header h3 {
+    margin-bottom: 0; /* Sin margen inferior */
+}
+
+.timeline__header h5 {
+    font-size: 2.1rem; /* Tamaño de fuente de los subtítulos */
+    font-weight: 400;
+    line-height: 1.333;
+    margin-top: 0; /* Sin margen superior */
+}
+
+/* ------------------------------------------------------------------- 
+   * Estilos responsivos para la sección "about"
+   * ------------------------------------------------------------------- */
+
+/* Ajustes para pantallas con un ancho máximo de 1200px */
+@media screen and (max-width:1200px) {
+    .s-about {
+        padding-top: 17.2rem; /* Ajusta el espacio superior */
+        padding-bottom: 15.6rem; /* Ajusta el espacio inferior */
+    }
+
+    .about-experience__timeline .column:first-child {
+        padding-right: 30px; /* Ajusta el espacio derecho en pantallas más pequeñas */
+    }
+
+    .about-experience__timeline .column::last-child {
+        padding-left: 30px; /* Ajusta el espacio izquierdo en pantallas más pequeñas */
+    }
+
+    .timeline::after {
+        width: 4.4rem; /* Ajusta el ancho de la línea horizontal */
+    }
+
+    .timeline__icon-wrap {
+        left: 4.4rem; /* Ajusta la posición de los iconos */
+    }
+
+    .timeline__block {
+        padding-left: 4.4rem; /* Ajusta el espacio izquierdo de los bloques */
+    }
+
+    .timeline__header h5 {
+        font-size: 1.8rem; /* Reduce el tamaño de los subtítulos */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 1024px */
+@media screen and (max-width:1024px) {
+    .about-me__text {
+        column-gap: 40px; /* Reduce el espacio entre columnas */
+    }
+
+    .about-me__buttons .column:first-child {
+        padding-right: 20px; /* Reduce el espacio a la derecha del primer botón */
+    }
+
+    .about-me__buttons .column:last-child {
+        padding-left: 20px; /* Reduce el espacio a la izquierda del último botón */
+    }
+
+    .about-experience__timeline .column:first-child {
+        padding-right: 16px; /* Reduce el espacio derecho */
+    }
+
+    .about-experience__timeline .column:last-child {
+        padding-left: 16px; /* Reduce el espacio izquierdo */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 900px */
+@media screen and (max-width:900px) {
+    .s-about .row {
+        max-width: 700px; /* Reduce el ancho máximo de la fila */
+    }
+
+    .about-me__buttons .column:first-child {
+        padding-right: 16px; /* Reduce el espacio derecho */
+    }
+
+    .about-me__buttons .column:last-child {
+        padding-left: 16px; /* Reduce el espacio izquierdo */
+    }
+
+    .about-experience__timeline .column {
+        -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%; /* Las columnas ocupan el 100% del ancho */
+        max-width: 100%;
+    }
+
+    .about-experience__timeline .column:first-child {
+        margin-bottom: 9.6rem; /* Añade espacio inferior */
+    }
+
+    .timeline::after {
+        width: 5.6rem; /* Ajusta el ancho de la línea horizontal */
+    }
+
+    .timeline__icon-wrap {
+        left: 5.6rem; /* Ajusta la posición de los iconos */
+    }
+
+    .timeline__block {
+        min-height: 0; /* Elimina la altura mínima de los bloques */
+        padding-left: 5.6rem; /* Ajusta el espacio izquierdo */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 800px */
+@media screen and (max-width:800px) {
+    .s-about {
+        padding-top: 16rem; /* Reduce el espacio superior */
+    }
+
+    .s-about .row {
+        max-width: 600px; /* Reduce el ancho máximo de la fila */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 600px */
+@media screen and (max-width:600px) {
+    .about-me__buttons .column:first-child,
+    .about-experience__timeline .column:first-child {
+        padding-right: 10px; /* Reduce el espacio derecho */
+    }
+
+    .about-me__buttons .column:last-child,
+    .about-experience__timeline .column:last-child {
+        padding-left: 10px; /* Reduce el espacio izquierdo */
+    }
+
+    .timeline::after {
+        width: 4.4rem; /* Reduce el ancho de la línea horizontal */
+    }
+
+    .timeline__icon-wrap {
+        left: 4.4rem; /* Ajusta la posición de los iconos */
+    }
+
+    .timeline__block {
+        padding-left: 4.4rem; /* Ajusta el espacio izquierdo */
+    }
+
+    .timeline__header h5 {
+        font-size: 1.8rem; /* Ajusta el tamaño del subtítulo */
+    }
+}
+
+/* Ajustes para pantallas con un ancho máximo de 400px */
+@media screen and (max-width:400px) {
+    .s-about>[class*="about-"] {
+        margin-bottom: 14rem; /* Ajusta el margen inferior */
+    }
+
+    .about-me__buttons .column:first-child,
+    .about-experience__timeline .column:first-child {
+        padding-right: 0; /* Elimina el espacio derecho */
+    }
+
+    .about-me__buttons .column:last-child,
+    .about-experience__timeline .column:last-child {
+        padding-left: 0; /* Elimina el espacio izquierdo */
+    }
+
+    .timeline::after {
+        width: 2.8rem; /* Reduce el ancho de la línea horizontal */
+    }
+
+    .timeline__icon-wrap {
+        left: 2.8rem; /* Ajusta la posición de los iconos */
+    }
+
+    .timeline__block {
+        padding-left: 2.8rem; /* Ajusta el espacio izquierdo */
+    }
 }
